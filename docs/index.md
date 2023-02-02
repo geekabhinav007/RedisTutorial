@@ -4,7 +4,7 @@ Redis is an open source (BSD licensed), in-memory data structure store used as a
 
 ## INDEX FOR TUTORIAL
 
-[Basic Installation](install.md)
-[Basic Data Structure Of Redis](basicRedis.md)
-[Transactions](trans.md)
-[Redis Assigned Work](redisWork.md)
+1. [Basic Installation](install.md)
+2. [Basic Data Structure Of Redis](basicRedis.md)
+3. [Transactions](trans.md)
+4. [Redis Assigned Work](redisWork.md)

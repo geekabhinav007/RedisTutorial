@@ -184,4 +184,3 @@ Now same as above there are so much command for specific datatypes in redis like
 
 So, you can refer [official docs](https://redis.io/docs/data-types/) for using specific command in other data structures.
 
-## Transaction in Redis
