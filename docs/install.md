@@ -134,4 +134,4 @@ Exit out into the shell again when you are finished:
 127.0.0.1:6379> exit
 ```
 
-## Exploering Redis
+
