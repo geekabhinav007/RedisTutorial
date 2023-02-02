@@ -171,12 +171,17 @@ The `KEYS` command in Redis allows you to search the keyspace for keys matching 
 8) "PI"
 ```
 
-FLUSHALL
+`FLUSHALL` or `del` keyname for delete an specific key.
 
 ```bash
 127.0.0.1:6379> flushall
 OK
 127.0.0.1:6379> keys *
 (empty array)
-127.0.0.1:6379> 
+127.0.0.1:6379> del key 
 ```
+Now same as above there are so much command for specific datatypes in redis like List, Set, Sorted Set, HperLogLog, Hashes e.t.c
+
+So, you can refer [official docs](https://redis.io/docs/data-types/) for using specific command in other data structures.
+
+## Transaction in Redis
