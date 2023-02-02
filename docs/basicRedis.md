@@ -28,7 +28,7 @@ Redis is an in-memory database, which means that it stores data in RAM instead o
 
 ## Basic Redis Commands that I used for intial learning
 
-```bash
+```sh
 $ SET name "Kumar Abhinav"
 OK
 
@@ -180,7 +180,7 @@ OK
 (empty array)
 127.0.0.1:6379> del key 
 ```
+
 Now same as above there are so much command for specific datatypes in redis like List, Set, Sorted Set, HperLogLog, Hashes e.t.c
 
 So, you can refer [official docs](https://redis.io/docs/data-types/) for using specific command in other data structures.
-
