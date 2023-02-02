@@ -18,7 +18,7 @@ Redis is an in-memory database, which means that it stores data in RAM instead o
 
 1. Flexibility: Redis supports a wide range of data structures and operations, making it suitable for a variety of use cases, including caching, message queuing, pub/sub communication, and more.
 
-### Drawbacks of using Redis as an in-memory database and Advantage of Redis.
+### Drawbacks of using Redis as an in-memory database and Advantage of Redis
 
 1. Cost: Since Redis stores all data in RAM, it can be more expensive than disk-based databases, especially for large datasets.
 
@@ -26,3 +26,36 @@ Redis is an in-memory database, which means that it stores data in RAM instead o
 
 1. Persistence: By default, Redis does not persist data to disk, which means that if the Redis instance crashes or is restarted, all data stored in RAM will be lost. However, Redis provides several options for persistence, such as snapshots and AOF (Append-Only File), to mitigate this issue.
 
+## Basic Redis Commands that I used for intial learning
+
+```bash
+$ SET name "Kumar Abhinav"
+OK
+
+$ GET name
+"Kumar Abhinav"
+
+```
+
+The GETRANGE command in Redis is used to retrieve a substring of a string value stored at a specified key:
+
+```bash
+$ GETRANGE key start end
+
+127.0.0.1:6379> getrange email 0 6
+
+"example"
+```
+
+`start end both inclusive`
+
+`MGET and MSET`
+
+```bash
+127.0.0.1:6379> MSET age 21 domain IT
+OK
+127.0.0.1:6379> MGET name email age 
+1) "Kumar Abhinav"
+2) "example@gmail.com"
+3) "21"
+```
