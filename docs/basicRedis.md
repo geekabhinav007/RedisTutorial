@@ -155,6 +155,28 @@ OK
 127.0.0.1:6379> TTL a
 (integer) -2
 127.0.0.1:6379> 
+```
 
+The `KEYS` command in Redis allows you to search the keyspace for keys matching a specified pattern. The pattern argument is a glob-style pattern that can contain wildcards `(*)` to match zero or more characters, and question marks (?) to match exactly one character.
 
+```bash
+127.0.0.1:6379> keys *
+1) "newcount"
+2) "emai"
+3) "age"
+4) "name"
+5) "email"
+6) "count"
+7) "domain"
+8) "PI"
+```
+
+FLUSHALL
+
+```bash
+127.0.0.1:6379> flushall
+OK
+127.0.0.1:6379> keys *
+(empty array)
+127.0.0.1:6379> 
 ```
