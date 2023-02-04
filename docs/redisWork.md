@@ -58,7 +58,7 @@ redis-cli LOAD < /home/geek/Desktop/nb/dump.rdb
 (error) ERR unknown command `LOAD`, with args beginning with: 
 ```
 
-2. Restore Command
+1. Restore Command
 
 ```php
 redis-cli RESTORE <key> <ttl> <dumpfile>
@@ -75,7 +75,7 @@ redis-cli RESTORE backup 0 /home/geek/Desktop/nb/dump.rdb
 (error) ERR DUMP payload version or checksum are wrong
 ```
 
-3. Correction in Load Command
+1. Correction in Load Command
 
 ```sh
 (base) geek@g3:~/Desktop/nb$ redis-cli LOAD < `/home/geek/Desktop/nb/dump.rdb`
