@@ -92,4 +92,30 @@ bash: `/home/geek/Desktop/nb/dump.rdb`: ambiguous redirect
 
 ```
 
-#### Success
+1. Placing Dump File to Redis Working Directory.
+
+I was surprised when I noticed that whenever I attempted to place a dump file in the Redis working directory and restart the Redis services, the actual file was always changed to a blank dump file. My Proferssor, Rai Sir, and I thought that the issue could be related to the Redis configuration file, but after checking, we found no evidence to support our assumption. We tried to verify the file size by using the command `ls -trlh`, but everything appeared normal. We even changed the owner and password of the dump file, but to no avail.
+
+Finally, we came up with a plan to run the `start` and `stop` service of Redis one by one to analyze the problem. We first made a copy of the desired dump file and stopped the Redis service. To our `amazement`, the file was overwritten by a blank file. It was then that we realized the problem. Whenever the Redis service was stopped, the current instance of Redis was saved in the working directory, and the current instance was always blank.
+
+Therefore, we decided to `stop` the `Redis-server`, copy the dump file, and then `start` the server, which worked perfectly. We learned that the order of commands or the sequence of events can have a significant impact.
+
+### Success
+
+#### Restore an RDB file
+
+- If you have an RDB file dump.rdb that contains the data you want you can use this file to create a new database.
+
+- Copy the dump.rdb file into the Redis working directory.
+
+- If you do not know what it is folder you can run the command `CONFIG get dir` in `redis-cli` where your Redis instance is up and running.
+
+- Start the Redis service with the redis-server.
+
+- The file dump.rdb is automatically imported.
+
+- Connect to the database using redis-cli or any other client, to check that data have been imported.
+
+Note:- `You Must 1st Stop the Redis-Server then copt the dump file to the Redis working directory then Start the Redis-Server`
+
+`Here Order matters alot`
