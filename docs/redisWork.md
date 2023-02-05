@@ -1,4 +1,6 @@
-# Simple Table in Redis
+# Convert Redis Databse to CSV File
+
+## Test the Redis data to table data
 
 Redis is a NoSQL database and does not support traditional table structures like SQL databases. However, you can use Redis data structures such as Hashes, Lists, Sets, and Sorted Sets to create a simple key-value mapping, similar to a table.
 
