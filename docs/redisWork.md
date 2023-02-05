@@ -135,9 +135,9 @@ awk '{print "hmget " $0 " deleted editor timestamp edited reputation content pid
 redis-cli --csv > postCSVScript.csv meaning
 ```
 
-- The redis-cli --scan --pattern post:*command retrieves a list of keys in the Redis database that match the pattern "post:*".
+- The `redis-cli --scan --pattern` post:*command retrieves a list of keys in the Redis database that match the pattern "post:*".
 
-- The grep -e "^post:[^:]*$" command filters the list of keys to include only keys that exactly match the pattern "post:*".
+- The `grep -e "^post:[^:]*$"` command filters the list of keys to include only keys that exactly match the pattern "post:*".
 
 - The `awk '{print "hmget " $0 " deleted editor timestamp edited reputation content pid uid tid votes"}'` command generates a Redis hmget command for each key in the list, which retrieves the values of multiple hash fields associated with the key. The fields being retrieved are: `"deleted", "editor", "timestamp", "edited", "reputation", "content", "pid", "uid", "tid", and "votes"`.
 
