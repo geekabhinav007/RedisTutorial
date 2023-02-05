@@ -128,6 +128,8 @@ To find all unique keys in Redis, you can use the command "KEYS pattern" where p
 
 It's important to note that the KEYS command can be very slow for large databases and should be used with caution. A better alternative is to use the SCAN command which is a more efficient way of iterating through keys in Redis.
 
+`Script for Post Table`
+
 ```sh
 redis-cli --scan --pattern post:* |\
 grep -e "^post:[^:]*$" |\
@@ -146,3 +148,48 @@ redis-cli --csv > postCSVScript.csv meaning
 The `> postCSVScript.csv` redirection writes the CSV output to a file named postCSVScript.csv.
 
 `The purpose of this script is to extract information about posts from a Redis database and save it to a CSV file for further processing or analysis.`
+
+So, following above pattern same as post table:
+
+### I am going to create 3 More tables
+
+- topic
+- event
+- user
+
+`topic table creating script`
+
+```sh
+
+redis-cli --scan --pattern topic:* |\
+grep -e "^topic:[^:]*$" |\
+awk '{print "hmget " $0 " tid uid cid mainPid title slug timestamp lastposttime postcount viewcount locked deleted pinned"}' |\
+redis-cli --csv > topicCSVScript.csv
+
+```
+
+`event table Script`
+
+```sh
+
+redis-cli --scan --pattern event:* |\
+grep -e "^event:[^:]*$" |\
+awk '{print "hmget " $0 " eid timestamp ip newTitle type oldTitle uid "}' |\
+redis-cli --csv > eventCSVScript.csv
+
+```
+
+`user table Script`
+
+```sh
+
+redis-cli --scan --pattern user:* |\
+grep -e "^user:[^:]*$" |\
+awk '{print "hmget " $0 " username userslug sandstormId email joindate picture gravatarpicture fullname location birthday website signature uploadedpicture profileviews reputation postcount topiccount lastposttime banned status uid lastonline "}' |\
+redis-cli --csv > userCSVScript.csv
+
+```
+
+### Analysis of Data
+
+After analysising the data, I counclude that following colums play important role rest are not having that much use:
