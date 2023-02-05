@@ -46,7 +46,7 @@ To convert Redis database to CSV (Comma Separated Values), We can use one of the
 
 #### Efforts
 
-1. Tried Load Method
+- Tried Load Method
 
 ```sh
 redis-cli LOAD < /home/geek/Desktop/nb/dump.rdb
@@ -58,7 +58,7 @@ redis-cli LOAD < /home/geek/Desktop/nb/dump.rdb
 (error) ERR unknown command `LOAD`, with args beginning with: 
 ```
 
-1. Restore Command
+- Restore Command
 
 ```php
 redis-cli RESTORE <key> <ttl> <dumpfile>
@@ -75,7 +75,7 @@ redis-cli RESTORE backup 0 /home/geek/Desktop/nb/dump.rdb
 (error) ERR DUMP payload version or checksum are wrong
 ```
 
-1. Correction in Load Command
+- Correction in Load Command
 
 ```sh
 (base) geek@g3:~/Desktop/nb$ redis-cli LOAD < `/home/geek/Desktop/nb/dump.rdb`
@@ -92,7 +92,7 @@ bash: `/home/geek/Desktop/nb/dump.rdb`: ambiguous redirect
 
 ```
 
-1. Placing Dump File to Redis Working Directory.
+- Placing Dump File to Redis Working Directory.
 
 I was surprised when I noticed that whenever I attempted to place a dump file in the Redis working directory and restart the Redis services, the actual file was always changed to a blank dump file. My Proferssor, Rai Sir, and I thought that the issue could be related to the Redis configuration file, but after checking, we found no evidence to support our assumption. We tried to verify the file size by using the command `ls -trlh`, but everything appeared normal. We even changed the owner and password of the dump file, but to no avail.
 
