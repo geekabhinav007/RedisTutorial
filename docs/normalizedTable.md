@@ -38,3 +38,29 @@
 - viewcount
 - postcount
 - lastposttime
+
+### Demo Table
+
+Post table:
+
+| pid | content | timestamp | edited | uid | tid |
+|-----|---------|----------|--------|-----|-----|
+|     |         |          |        |     |     |
+
+Event table:
+
+| eid | newTitle | type | oldTitle | timestamp | uid |
+|-----|----------|------|----------|----------|-----|
+|     |          |      |          |          |     |
+
+User table:
+
+| uid | username | profileviews | lastposttime | postcount | topiccount |
+|-----|----------|--------------|--------------|-----------|-----------|
+|     |          |              |              |           |           |
+
+Topic table:
+
+| tid | mainPid | title | slug | viewcount | postcount | lastposttime |
+|-----|---------|-------|------|----------|-----------|--------------|
+|     |         |       |      |          |           |              |
