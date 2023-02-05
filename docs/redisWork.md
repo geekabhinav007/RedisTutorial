@@ -119,3 +119,28 @@ Therefore, we decided to `stop` the `Redis-server`, copy the dump file, and then
 Note:- `You Must 1st Stop the Redis-Server then copt the dump file to the Redis working directory then Start the Redis-Server`
 
 `Here Order matters alot`
+
+### Converting key value to CSV
+
+To find all unique keys in Redis, you can use the command "KEYS pattern" where pattern is a string that specifies a pattern for matching the keys you want to retrieve. For example, to get all keys in Redis, you can run "KEYS *". This will return an array of all keys in the database.
+
+It's important to note that the KEYS command can be very slow for large databases and should be used with caution. A better alternative is to use the SCAN command which is a more efficient way of iterating through keys in Redis.
+
+```sh
+redis-cli --scan --pattern post:* |\
+grep -e "^post:[^:]*$" |\
+awk '{print "hmget " $0 " deleted editor timestamp edited reputation content pid uid tid votes"}' |\
+redis-cli --csv > postCSVScript.csv meaning
+```
+
+- The redis-cli --scan --pattern post:*command retrieves a list of keys in the Redis database that match the pattern "post:*".
+
+- The grep -e "^post:[^:]*$" command filters the list of keys to include only keys that exactly match the pattern "post:*".
+
+- The `awk '{print "hmget " $0 " deleted editor timestamp edited reputation content pid uid tid votes"}'` command generates a Redis hmget command for each key in the list, which retrieves the values of multiple hash fields associated with the key. The fields being retrieved are: `"deleted", "editor", "timestamp", "edited", "reputation", "content", "pid", "uid", "tid", and "votes"`.
+
+- The `redis-cli --csv` command retrieves the values of the hash fields from Redis and formats the output in CSV format.
+
+The `> postCSVScript.csv` redirection writes the CSV output to a file named postCSVScript.csv.
+
+`The purpose of this script is to extract information about posts from a Redis database and save it to a CSV file for further processing or analysis.`
