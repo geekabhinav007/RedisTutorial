@@ -193,3 +193,25 @@ redis-cli --csv > userCSVScript.csv
 ### Analysis of Data
 
 After analysising the data, I counclude that following colums play important role rest are not having that much use:
+
+1. timestamp
+1. edited
+1. content
+1. pid
+1. uid
+1. tid
+1. newTitle
+1. oldTitle
+1. eid
+1. type
+1. tid
+1. mainPidtitle
+1. slug
+1. viewcount
+1. delete
+1. Postcountusername
+1. userslug
+1. profileviews  
+1. lastposttime
+1. postcount
+1. topiccount
