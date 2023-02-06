@@ -10,3 +10,4 @@ Redis is an open source (BSD licensed), in-memory data structure store used as a
 1. [Pub/Sub in Redis](pubSub.md)
 1. [Redis Script](redisScript.md)
 1. [Redis Assigned Work](redisWork.md)
+1. [PIC](anoridTutImage.md)
