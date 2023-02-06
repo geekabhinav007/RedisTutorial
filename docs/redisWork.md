@@ -149,7 +149,7 @@ The `> postCSVScript.csv` redirection writes the CSV output to a file named post
 
 `The purpose of this script is to extract information about posts from a Redis database and save it to a CSV file for further processing or analysis.`
 
-So, following above pattern same as post table:
+So, I will be following above pattern for other Scripts in Redis-Server same as post table:
 
 ### I am going to create 3 More tables
 
@@ -216,4 +216,4 @@ After analysising the data, I counclude that following colums play important rol
 1. postcount
 1. topiccount
 
-[Furthur Tutorial](https://geekabhinav007.github.io/RedisTutorial/rnormalizedTable.md)
+[Furthur Tutorial](https://geekabhinav007.github.io/RedisTutorial/normalizedTable.md)
