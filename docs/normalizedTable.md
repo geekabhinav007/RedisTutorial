@@ -1,6 +1,6 @@
 # Table Structure
 
-## To achieve normalization using the above-provided data, you can create the following tables and columns
+## To achieve normalization using the desire columns in last part of this tutorial, you can create the following tables and columns
 
 ### Post table
 
