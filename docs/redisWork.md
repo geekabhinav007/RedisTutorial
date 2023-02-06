@@ -216,4 +216,4 @@ After analysising the data, I counclude that following colums play important rol
 1. postcount
 1. topiccount
 
-[Furthur Tutorial](https://geekabhinav007.github.io/RedisTutorial/normalizedTable.md)
+[Furthur Tutorial](normalizedTable.md)
